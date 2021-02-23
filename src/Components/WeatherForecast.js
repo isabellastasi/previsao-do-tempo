@@ -12,6 +12,7 @@ export default class Weather extends React.Component {
             temperature: "",
             weatherType: "",
             imageURL: "",
+            locationName: "",
         }
 
         this.weatherForecast = this.weatherForecast.bind(this)
@@ -21,6 +22,7 @@ export default class Weather extends React.Component {
 
     weatherForecast() {
         document.getElementById('cityName').value = '';
+        
         let key = '71d469ad633462a165133b9c0d63b59f';
         let city = (this.state.city).replace(" ", "+");
         let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${key}`
@@ -51,12 +53,16 @@ export default class Weather extends React.Component {
             .then((data) => {
                 let temperature = (data.main.temp).toFixed([1]);
                 let id = data.weather[0].icon;
+                let locationName = data.name;
+       
 
                 this.setState({ temperature })
-
-                console.log(this.state.id)
                 this.setState({ id })
+                this.setState({locationName})
+     
                 this.icon(id);
+                
+
             })
             .catch((err) => {
 
@@ -68,10 +74,10 @@ export default class Weather extends React.Component {
 
         let imageURL = `http://openweathermap.org/img/wn/${id}@2x.png`
         this.setState({ imageURL })
-
+        this.getLocation(this.state.lat, this.state.lon)
     }
 
-
+ 
     render() {
         return (
 
@@ -89,7 +95,7 @@ export default class Weather extends React.Component {
 
                 <div id="forecast">
 
-                    <h3 id="city"> {this.state.city}</h3>
+                    <h3 id="city"> {this.state.locationName}</h3>
 
                     <img id="weather" src={this.state.imageURL} alt="Icone do Clima"></img>
                     <h3>{this.state.temperature}°C</h3>
