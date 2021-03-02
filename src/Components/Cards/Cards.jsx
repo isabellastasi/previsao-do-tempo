@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import Delete from '../../assets/clear.svg'
+
 
 export default class Weather extends React.Component {
     constructor(props) {
