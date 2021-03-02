@@ -1,6 +1,9 @@
 .App{
-    display: flex;
-    flex-direction: row;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    
-}
+
+    font-family: Verdana;
+    color: white;
+    background-image: linear-gradient(#31AFD4,#87BDD7);    
+    padding: 5px;
+    min-height: 50vw;
+
+}    

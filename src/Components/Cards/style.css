@@ -1,0 +1,44 @@
+.forecast{
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ border: 2px solid white;
+ border-radius: 10px;
+ height: 250px;
+ width: 215px;
+ box-shadow: 10px 10px #1B1725;
+}
+
+#dia{
+  background-image: linear-gradient( #FEC601, #EEC86D);
+}
+
+#noite{
+  background-image: linear-gradient( #041844,#004FFF);;
+}
+.forecast:hover {
+  transform: scale(1.03);
+}
+
+h3{
+  word-break:break-allust;
+}
+
+h3, h5{
+  margin: auto;
+}
+
+#delete{
+  background-color:inherit;
+  border:none;
+  color:white;
+  align-self: flex-end;
+  margin-right: 5px;
+  outline: none;
+  border-radius: 10px;
+}
+
+#delete:hover{
+  background-color:red;
+}

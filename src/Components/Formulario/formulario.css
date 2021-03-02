@@ -1,0 +1,25 @@
+.formulario{
+  display: flex;
+  justify-content: center;
+}
+
+.botao{
+  background-color: black;
+  outline: none;
+  border: 0px;
+  margin: 5px;
+  color: white;
+  height: auto;
+  font-size: medium;
+  border-radius: 2px;
+}
+.botao:hover{
+  background-color: rgb(21, 15, 92);
+}
+
+#campo{
+
+  height: inherit;
+  width: 300px;
+  margin: 5px 10px ;
+}

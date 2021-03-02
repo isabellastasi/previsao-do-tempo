@@ -1,0 +1,10 @@
+.lista-cards{
+display: flex;
+flex-direction: row;
+list-style: none;
+flex-wrap: wrap;
+}
+
+li{
+    margin:15px;
+}
